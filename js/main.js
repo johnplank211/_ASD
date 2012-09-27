@@ -1,3 +1,18 @@
+$(function(){
+
+	$("#checklistForm h5").fadeOut().
+						fadeIn().
+						fadeOut().
+						fadeIn().
+						animate({fontSize:30},1000).
+						animate({fontSize:12},1000).
+						css({color:"red"})
+	;
+
+});
+
+
+
 
 console.log("bit me");
 
@@ -10,15 +25,24 @@ console.log("eat it");
 		
 $('#form').on('pageinit', function(){
 
-		var myForm = $('#form');
+		var displayLink = $("#displayLink");
+		//displayLink.on("click", getData);
+	 	var clearLink = $("#clear");
+		clearLink.on("click", clearLocal);
+		var save = $("#submit");
+		save.on("click", validate);
+
+		var myForm = $('#checklistForm');
 		    myForm.validate({
 			invalidHandler: function(form, validator) {
+				console.log("Validate broken")
 			},
 			submitHandler: function() {
-		var data = myForm.serializeArray();
-			storeData(data);
-		}
-	});
+				var data = myForm.serializeArray();
+				storeData(data);
+				console.log("hello");
+			}
+		});
 	
 	//any other code needed for addItem page goes here
 	
@@ -26,51 +50,51 @@ $('#form').on('pageinit', function(){
 
 //The functions below can go inside or outside the pageinit function for the page in which it is needed.
 
-var autoFillData = function (){
+/*var autoFillData = function (){
 	 for ( var n in json) {
 			var id = Math.floor(Math.random()* 1000001);
 			localStorage.setItem(id, JSON.stringify(json[n]));
 		}
-};
+};*/
 
-var getData = function(){
-	console.log("yes");
+/*var getData = function(){
+	console.log("yes");*/
 		//changePage("savedData");
 		//toggleControls("on");
-		if (localStorage.length === 0) {
+		/*if (localStorage.length === 0) {
 			alert("There is no data in Local Storage so data was added. ");
 			autoFillData();
-		}
+		}*/
 
-		var savedData = $("#savedData");
+		/*var savedData = $("#savedData");
 		console.log(savedData);
 		for (var i = 0, len = localStorage.length; i < len; i++) {
-			 $("<li>").append(savedData);
+			 $("<li>").append(savedData);*/
 			 //var linksLi = $("<li>");
 			 //makeList.appendTo("#makeli");
-			 var key = localStorage.key(i);
+			 /*var key = localStorage.key(i);
 			 var value = localStorage.getItem(key);
 
 			 var obj = JSON.parse(value);
-			 console.log(key, value, obj);
+			 console.log(key, value, obj);*/
 			 //var makeSubList = $("<ul>");
 			 //makeli.appendTo("#makeSubList");
 			 //getImage(obj.apocalypse[1], makeSubList);
-			 for (var t in obj) {
-			 	$("<p>" + obj[t][0]+ "</p>").append(savedData);
+			 /*for (var t in obj) {
+			 	$("<p>" + obj[t][0]+ "</p>").append(savedData);*/
 			 	 //var makeSubLi = $("<li>");
 			 	 //makeSubList.appendTo("#makeSubLi");
 			 	 //var optSubText = obj[t][0]+" "+obj[t][1];
 			 	 //makeSubLi.html = optSubText;
 			 	 //makeSubList.appendTo("#linksLi");
-			 }
+			 //}
 			//makeItemLinks(localStorage.key(i),  linksLi);
 			//console.log(i);
-		}
+		//}
 		//changePage("savedData");
 		//refreshList();
-		console.log("tard");	
-};
+		//console.log("tard");	
+//};
 
 /*var changePage = function(pageId){
 		console.log(pageId);
@@ -78,18 +102,113 @@ var getData = function(){
 		$.mobile.changePage($('#' + pageId), {transition:"slide"});
 };*/
 
+var getRadio = function () {
+		var radio = $(":radio[name=apocalypse]:checked").val();
+		return radio;
+		console.log(radio);
+		
+	};
+
+
+
+
+
+var getCheckBoxValue = function () {
+		// var checkBox = 13;
+		// for (var i=0; i<checkBox; i++) {
+
+		// }
+		var checkboxes = [];
+			$(":checkbox:checked").each(function(x){
+				checkboxes[x]= $(this).val()
+				console.log(x, checkboxes);
+			})
+
+		if($("#firearm").is(':checked')){
+			firearmValue = true;
+		}else{
+			firearmValue = false;
+		}
+		if($("#ammo").is(':checked')){
+			ammoValue = true;
+		}else{
+			ammoValue = false;
+		}
+		if($("#meleeWeapon").is(':checked')){
+			meleeWeaponValue = true;
+		}else{
+			meleeWeaponValue = false;
+		}
+		if($("#cannedFood").is(':checked')){
+			cannedValue = true;
+		}else{
+			cannedValue = false;
+		}
+		if($("#water").is(':checked')){
+			waterValue = true;
+		}else{
+			waterValue = false;
+		}
+		if($("#chainMeshSuit").is(':checked')){
+			chainMeshSuitValue = true;
+		}else{
+			chainMeshSuitValue = false;
+		}
+		if($("#TopographicalMap").is(':checked')){
+			topographicalMapValue = true;
+		}else{
+			topographicalMapValue = false;
+		}
+		if($("#leatherman").is(':checked')){
+			leathermanValue = true;
+		}else{
+			leathermanValue = false;
+		}
+		if($("#rucksack").is(':checked')){
+			rucksackValue = true;
+		}else{
+			rucksackValue = false;
+		}
+		if($("#boots").is(':checked')){
+			bootsValue = true;
+		}else{
+			bootsValue = false;
+		}
+		if($("#matches").is(':checked')){
+			matchesValue = true;
+		}else{
+			matchesValue = false;
+		}
+		if($("#p38").is(':checked')){
+			p38Value = true;
+		}else{
+			p38Value = false;
+		}
+		if($("#intestinalFortitude").is(':checked')){
+			intestinalFortitudeValue = true;
+		}else{
+			intestinalFortitudeValue = false;
+		}
+
+
+
+		
+	};
+
 
 var storeData = function(data){
-	if(!key) {
-			var id    		= Math.floor(Math.random()* 1000001);
+	console.log("boom");
+		var id;
+	if(!data) {
+			 id    		= Math.floor(Math.random()* 1000001);
 		} else {
-			var id = key;
+			 id = data;
 		}
 		getCheckBoxValue();
-		getRadio();
+		var apocalypseValue = getRadio();
 		var item 			= {};
 		    item.apocalypse = ["Apocalypse:", apocalypseValue];
-			item.fear       = ["Fear level:", $("#groups").value];
+			item.fear       = ["Fear level:", $("#select").val()];
 			item.firearm	= ["Firearm:", firearmValue];
 			item.ammo		= ["Ammo:", ammoValue];
 			item.melee 		= ["Melee weapon:", meleeWeaponValue];
@@ -102,12 +221,11 @@ var storeData = function(data){
 			item.boots		= ["Boots:", bootsValue];
 			item.matches	= ["Matches:", matchesValue];
 			item.p38		= ["P38:", p38Value];
-			item.intestinal = ["Intestinal Fortitude:", intestinalFortitudeValue];
-			//item.item		= ["Item:", ge("item").value];			
-			item.date       = ["World Ended:", $("#date").value];
-			item.email		= ["Email:", $("#email").value];
-			item.comments	= ["Comments:", $("#comments").value];
-			item.readiness  = ["Readiness:", $("#readiness").value];
+			item.intestinal = ["Intestinal Fortitude:", intestinalFortitudeValue];			
+			item.date       = ["World Ended:", $("#mydate").val()];
+			item.email		= ["Email:", $("#email").val()];
+			item.comments	= ["Comments:", $("#comments").val()];
+			item.readiness  = ["Readiness:", $("#readiness").val()];
 
 		localStorage.setItem(id, JSON.stringify(item));
 		alert("Checklist Saved!");
@@ -130,12 +248,7 @@ var clearLocal = function(){
 
 var validate;
 
-var displayLink = $("#displayLink");
-		displayLink.on("click", getData);
-	 	var clearLink = $("#clear");
-		clearLink.on("click", clearLocal);
-		var save = $("#submit");
-		save.on("click", validate);
 
-/*});*/
+
+
 
