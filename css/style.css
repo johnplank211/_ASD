@@ -72,6 +72,7 @@ small {
 h2 {
 	color: black;
 	text-align: left;
+
 	}
 
 
@@ -80,6 +81,7 @@ h3 {
 	text-align: left;
     color: black;
     margin-bottom: 0px;
+    padding-top: 10px;
     background: ;
 }
 
@@ -91,6 +93,8 @@ h3 {
 body {
     background: #caab87;
 }
+
+
 
  /*legend {
  	font-style: italic;

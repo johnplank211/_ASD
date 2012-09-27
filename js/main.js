@@ -1,15 +1,19 @@
-$(function(){
+/*$(function(){
 
 	$("#checklistForm h5").fadeOut().
 						fadeIn().
 						fadeOut().
 						fadeIn().
-						animate({fontSize:30},1000).
+						animate({fontSize:15},1000).
+						animate({fontSize:12},1000).
+						animate({fontSize:15},1000).
+						animate({fontSize:12},1000).
+						animate({fontSize:15},1000).
 						animate({fontSize:12},1000).
 						css({color:"red"})
 	;
 
-});
+});*/
 
 
 
@@ -26,7 +30,7 @@ console.log("eat it");
 $('#form').on('pageinit', function(){
 
 		var displayLink = $("#displayLink");
-		//displayLink.on("click", getData);
+		displayLink.on("click", getData);
 	 	var clearLink = $("#clear");
 		clearLink.on("click", clearLocal);
 		var save = $("#submit");
@@ -50,57 +54,64 @@ $('#form').on('pageinit', function(){
 
 //The functions below can go inside or outside the pageinit function for the page in which it is needed.
 
-/*var autoFillData = function (){
+var autoFillData = function (){
 	 for ( var n in json) {
 			var id = Math.floor(Math.random()* 1000001);
 			localStorage.setItem(id, JSON.stringify(json[n]));
 		}
-};*/
+};
 
-/*var getData = function(){
-	console.log("yes");*/
-		//changePage("savedData");
+var getData = function () {
+		changePage("savedData");
 		//toggleControls("on");
-		/*if (localStorage.length === 0) {
+		if (localStorage.length === 0) {
 			alert("There is no data in Local Storage so data was added. ");
 			autoFillData();
-		}*/
+		}
 
-		/*var savedData = $("#savedData");
-		console.log(savedData);
+		var savedData = $("#savedData");
+		refreshList();
 		for (var i = 0, len = localStorage.length; i < len; i++) {
-			 $("<li>").append(savedData);*/
+			 $("<ul>").append(savedData);
 			 //var linksLi = $("<li>");
 			 //makeList.appendTo("#makeli");
-			 /*var key = localStorage.key(i);
+			 var key = localStorage.key(i);
 			 var value = localStorage.getItem(key);
 
 			 var obj = JSON.parse(value);
-			 console.log(key, value, obj);*/
+			 console.log(key, value, obj);
 			 //var makeSubList = $("<ul>");
 			 //makeli.appendTo("#makeSubList");
 			 //getImage(obj.apocalypse[1], makeSubList);
-			 /*for (var t in obj) {
-			 	$("<p>" + obj[t][0]+ "</p>").append(savedData);*/
-			 	 //var makeSubLi = $("<li>");
-			 	 //makeSubList.appendTo("#makeSubLi");
+			 for (var t in obj) {
+			 	$("<p>" + obj[t][0] + "</p>").append(savedData);
+			 	// var makeSubLi = $("<li>");
+			 	// makeSubList.appendTo("#makeSubLi");
 			 	 //var optSubText = obj[t][0]+" "+obj[t][1];
-			 	 //makeSubLi.html = optSubText;
-			 	 //makeSubList.appendTo("#linksLi");
-			 //}
+			 	// makeSubLi.html = optSubText;
+			 	// makeSubList.appendTo("#linksLi");
+			 }
 			//makeItemLinks(localStorage.key(i),  linksLi);
 			//console.log(i);
-		//}
-		//changePage("savedData");
-		//refreshList();
-		//console.log("tard");	
-//};
+		}
+		changePage("savedData");
+		refreshList();
+		console.log("bravo");	
+	};
 
-/*var changePage = function(pageId){
+var changePage = function(pageId){
 		console.log(pageId);
 		$('#'+ pageId).trigger('pageinit');
 		$.mobile.changePage($('#' + pageId), {transition:"slide"});
-};*/
+};
+
+function refreshList(){
+	console.log('List refreshed');
+	$("#checklistData").listview('refresh');
+};
+
+
+
 
 var getRadio = function () {
 		var radio = $(":radio[name=apocalypse]:checked").val();
@@ -196,13 +207,13 @@ var getCheckBoxValue = function () {
 	};
 
 
-var storeData = function(data){
+var storeData = function(key){
 	console.log("boom");
 		var id;
-	if(!data) {
+	if(!key) {
 			 id    		= Math.floor(Math.random()* 1000001);
 		} else {
-			 id = data;
+			 id = key;
 		}
 		getCheckBoxValue();
 		var apocalypseValue = getRadio();
