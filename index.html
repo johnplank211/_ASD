@@ -59,11 +59,27 @@ Apocalypse Checklist -->
 		
 	 		</div>
 		
+		   	<div id="ajax">
+				
+					<ul id="items" data-role="listview" data-theme="d">
+						<li class="button">
+							<a href="#" data-role="button" id="json">JSON</a>
+						</li>
+						<li class="button">
+							<a href="#" data-role="button" id="csv">CSV</a>
+						</li>
+						<li class="button">
+							<a href="#" data-role="button" id="xml">XML</a>
+						</li>
+					</ul>
+				
+			</div>
+
 		   	<div data-role="footer" data-position="fixed" data-id="x" >
 		
 				<div data-role="navbar" >
 					<ul>
-						<li><a href="#news" data-icon="star" >End News</a></li>
+						<li><a href="#savedData" data-icon="star" >End News</a></li>
 						<li><a href="http://johnplank211.github.com/mdv-projects/MiU/week-4/bronzeApp/index.html" data-icon="star">git</a></li>
 						<li><a href="#storage" data-icon="star" >Storage</a></li>
 						
@@ -378,10 +394,7 @@ Apocalypse Checklist -->
 				</div>
 			</div>
 		</div>
-		<!-- </div> -->
-			
-		<!-- </div> -->
-	<!-- </div> -->
+		
 
 		<div data-role="page" id="savedData" data-add-back-btn="true" data-theme="a" >
 			<div data-role="header" data-role="fixed">
@@ -389,14 +402,15 @@ Apocalypse Checklist -->
 			</div>
 				
 			<div class="content">
-				
-
-				<ul data-role="listview" data-theme="d">
-
+				<ul id="show" data-role="listview">
+					
 
 				</ul>
+				<br><p>I'm loving it</p>
+				<br><br><br><br><br><br><br><br><br><br><br><br>
 				
 			</div>
+
 
 			<div data-role="footer" data-position="fixed" data-id="x" >
 				<div data-role="navbar" >
@@ -416,11 +430,13 @@ Apocalypse Checklist -->
 
 
 
-		<div data-role="page" id="form" data-add-back-btn="true" data-theme="a" >
+		<div data-role="page" id="form" data-theme="a" >
 			<div data-role="header" data-role="fixed">
-				<img src="images/header2.png" >
+				<a href="#home">
+					<img src="images/header2.png" >
+				</a><br><br>
 			</div>
-			<div class="content">
+			<div class="content-primary">
 					
 				<form id="checklistForm" >
 

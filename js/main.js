@@ -260,6 +260,81 @@ var clearLocal = function(){
 var validate;
 
 
+	$('#json').on('click', function(){			
+		$('<h2>').html('JSON starts here').appendTo('#items');
+		$.ajax({
+			url: 'data.json',
+			type: 'GET',
+			dataType: 'json',
+			success: function(answer){
+				console.log(answer);
+
+				for (var i=0, j=answer.data1.length; i<j; i++){
+					
+					console.log(j);
+					var jdata = answer.data1[i];
+					console.log(answer);
+
+					$(''+
+						'<li>'+ 
+							jdata.fear +'<br />'+
+							jdata.apocalypse +'<br />'+
+							jdata.firearm +'<br />'+
+							jdata.ammo +'<br />'+
+							jdata.water +'<br />'+
+							jdata.p38 +'<br /><br />'+
+						'</li>'
+					).appendTo('#items');
+					console.log(answer);
+				}
+			}
+		});
+	});
+
+	$('#csv').on('click', function(){
+		$('<h2>').html('CSV starts here').appendTo('#items');
+		$.ajax({
+			url: 'data.csv',
+			type: 'GET',
+			dataType: 'text',
+			success: function(answer) {
+				var line = answer.split('\n');
+				for (var i = 1, x = line.length; i < x; i++) {
+					var obj = line[i];
+					var item = obj.split(',');
+					var itemList = $(
+						'<li>' +
+						'Apocalypse:' + item[0] + 
+						"Firearm: " + item[1] + 
+						"Ammo: " + item[2] +
+						'</li>'
+					).appendTo('#items');
+				}	
+			}
+		});
+	});
+
+	$('#xml').on('click', function(){
+		$('<h2>').html('XML starts here').appendTo('#items');
+			$.ajax({
+			url: "data.xml",
+			type: "GET",
+			dataType: "xml",
+			success: function(xml) {
+				console.log(xml);
+				$(xml).find('item').each(function(){
+					var id = $(this).attr('id');
+					var firearm = $(this).find('firearm').text();
+					var ammo = $(this).find('ammo').text();
+					var apocalypse = $(this).find('apocalypse').text();
+					$('<div class=items id=item' + id + '></div>')
+						.html('<div>' + apocalypse + '<br>' + firearm + '<br>' + ammo + '</div>')
+						.appendTo('#items');
+				});
+			}
+		});
+	});
+
 
 
 
