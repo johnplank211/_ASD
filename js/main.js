@@ -69,11 +69,11 @@ var getData = function () {
 			autoFillData();
 		}
 
-		var savedData = $("#savedData");
+		var show = $("#show");
 		//$("#show").empty();
 		refreshList();
 		for (var i = 0, len = localStorage.length; i < len; i++) {
-			 $("<li>").append(savedData);
+			 $("<li>").append(show);
 			 
 			 var key = localStorage.key(i);
 			 var value = localStorage.getItem(key);
@@ -82,12 +82,12 @@ var getData = function () {
 			 console.log(key, value, obj);
 			 
 			 for (var t in obj) {
-			 	$("<p>" + obj[t][0] + "</p>").append(savedData);
+			 	$("<p>" + obj[t][0] + "</p>").append(show);
 			 	
 			 }
 			
 		}
-		$("#show").listview("refresh");
+		//$("#show").listview("refresh");
 		//changePage("savedData");
 		refreshList();
 		console.log("bravo");	
@@ -235,6 +235,8 @@ var storeData = function(key){
 		localStorage.setItem(id, JSON.stringify(item));
 		alert("Checklist Saved!");
 	console.log(item);
+	changePage("savedData");
+	getData();
 }; 
 
 var	deleteItem = function (){
