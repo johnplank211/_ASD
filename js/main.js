@@ -70,31 +70,25 @@ var getData = function () {
 		}
 
 		var savedData = $("#savedData");
+		//$("#show").empty();
 		refreshList();
 		for (var i = 0, len = localStorage.length; i < len; i++) {
-			 $("<ul>").append(savedData);
-			 //var linksLi = $("<li>");
-			 //makeList.appendTo("#makeli");
+			 $("<li>").append(savedData);
+			 
 			 var key = localStorage.key(i);
 			 var value = localStorage.getItem(key);
 
 			 var obj = JSON.parse(value);
 			 console.log(key, value, obj);
-			 //var makeSubList = $("<ul>");
-			 //makeli.appendTo("#makeSubList");
-			 //getImage(obj.apocalypse[1], makeSubList);
+			 
 			 for (var t in obj) {
 			 	$("<p>" + obj[t][0] + "</p>").append(savedData);
-			 	// var makeSubLi = $("<li>");
-			 	// makeSubList.appendTo("#makeSubLi");
-			 	 //var optSubText = obj[t][0]+" "+obj[t][1];
-			 	// makeSubLi.html = optSubText;
-			 	// makeSubList.appendTo("#linksLi");
+			 	
 			 }
-			//makeItemLinks(localStorage.key(i),  linksLi);
-			//console.log(i);
+			
 		}
-		changePage("savedData");
+		$("#show").listview("refresh");
+		//changePage("savedData");
 		refreshList();
 		console.log("bravo");	
 	};
@@ -106,8 +100,8 @@ var changePage = function(pageId){
 };
 
 function refreshList(){
-	console.log('List refreshed');
-	$("#checklistData").listview('refresh');
+	console.log('refreshed');
+	$("#savedData").listview('refresh');
 };
 
 
