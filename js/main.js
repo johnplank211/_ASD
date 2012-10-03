@@ -64,7 +64,7 @@ var autoFillData = function (){
 var getData = function () {
 		console.log("here here")
 		//changePage("savedData");
-		//toggleControls("on");
+		
 		if (localStorage.length === 0) {
 			alert("There is no data in Local Storage so data was added. ");
 			autoFillData();
@@ -90,7 +90,7 @@ var getData = function () {
 		}
 		//$("#show").listview("refresh");
 		changePage("savedData");
-		refreshList(show);
+		refreshList();
 		console.log("bravo");	
 	};
 
@@ -102,7 +102,7 @@ var changePage = function(pageId){
 
 function refreshList(){
 	console.log('refreshed');
-	$("#").listview('refresh');
+	$("#show").listview('refresh');
 };
 
 
@@ -258,7 +258,7 @@ var validate;
 
 
 	$('#json').on('click', function(){			
-		refreshList("#items");
+		//refreshList("#items");
 		$('<h2>').html('JSON starts here').appendTo('#items');
 		$.ajax({
 			url: 'data.json',
