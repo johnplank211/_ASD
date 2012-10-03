@@ -62,7 +62,8 @@ var autoFillData = function (){
 };
 
 var getData = function () {
-		changePage("savedData");
+		console.log("here here")
+		//changePage("savedData");
 		//toggleControls("on");
 		if (localStorage.length === 0) {
 			alert("There is no data in Local Storage so data was added. ");
@@ -70,8 +71,8 @@ var getData = function () {
 		}
 
 		var show = $("#show");
-		//$("#show").empty();
-		refreshList();
+		$("#show").empty();
+		//refreshList();
 		for (var i = 0, len = localStorage.length; i < len; i++) {
 			 $("<li>").append(show);
 			 
@@ -88,8 +89,8 @@ var getData = function () {
 			
 		}
 		//$("#show").listview("refresh");
-		//changePage("savedData");
-		refreshList();
+		changePage("savedData");
+		refreshList(show);
 		console.log("bravo");	
 	};
 
@@ -101,7 +102,7 @@ var changePage = function(pageId){
 
 function refreshList(){
 	console.log('refreshed');
-	$("#savedData").listview('refresh');
+	$("#").listview('refresh');
 };
 
 
@@ -257,6 +258,7 @@ var validate;
 
 
 	$('#json').on('click', function(){			
+		refreshList("#items");
 		$('<h2>').html('JSON starts here').appendTo('#items');
 		$.ajax({
 			url: 'data.json',
@@ -264,7 +266,7 @@ var validate;
 			dataType: 'json',
 			success: function(answer){
 				console.log(answer);
-
+				refreshList("#home");
 				for (var i=0, j=answer.data1.length; i<j; i++){
 					
 					console.log(j);
