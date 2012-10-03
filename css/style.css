@@ -59,10 +59,10 @@ div {
     background: #caab87;
 }
 
-ul {
+/*ul {
     background: #caab87;
 }
-
+*/
 
 small {
 	font-style: italic;
@@ -90,9 +90,9 @@ h3 {
  	font-weight: bold;
  }
 
-body {
+/*body {
     background: #caab87;
-}
+}*/
 
 
 
@@ -134,9 +134,9 @@ label.error {
     margin: 10px 0px;
 }
 
-#errorLink {
+/*#errorLink {
     display: none;
-}
+}*/
 
 
 

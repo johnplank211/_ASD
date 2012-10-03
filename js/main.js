@@ -89,6 +89,7 @@ var getData = function () {
 			
 		}
 		//$("#show").listview("refresh");
+		console.log(key, value, obj);
 		changePage("savedData");
 		refreshList();
 		console.log("bravo");	
@@ -256,40 +257,49 @@ var clearLocal = function(){
 
 var validate;
 
+function refreshAjax(){
+	console.log('refreshed');
+	$("#items").listview('refresh');
+};
+
 
 	$('#json').on('click', function(){			
-		//refreshList("#items");
-		$('<h2>').html('JSON starts here').appendTo('#items');
-		$.ajax({
-			url: 'data.json',
-			type: 'GET',
-			dataType: 'json',
-			success: function(answer){
-				console.log(answer);
-				refreshList("#home");
-				for (var i=0, j=answer.data1.length; i<j; i++){
-					
-					console.log(j);
-					var jdata = answer.data1[i];
-					console.log(answer);
+				refreshAjax("#items")
+				$('<h2>').html('JSON starts here').appendTo('#items');
+				$.ajax({
+					url: 'data.json',
+					type: 'GET',
+					dataType: 'json',
+					success: function(answer){
+						console.log(answer);
 
-					$(''+
-						'<li>'+ 
-							jdata.fear +'<br />'+
-							jdata.apocalypse +'<br />'+
-							jdata.firearm +'<br />'+
-							jdata.ammo +'<br />'+
-							jdata.water +'<br />'+
-							jdata.p38 +'<br /><br />'+
-						'</li>'
-					).appendTo('#items');
-					console.log(answer);
-				}
-			}
+						for (var i=0, j=answer.data1.length; i<j; i++){
+							
+							console.log(j);
+							var jdata = answer.data1[i];
+							console.log(answer);
+
+							$(''+
+								'<li>'+ 
+									jdata.fear +'<br />'+
+									jdata.apocalypse +'<br />'+
+									jdata.firearm +'<br />'+
+									jdata.ammo +'<br />'+
+									jdata.water +'<br />'+
+									jdata.p38 +'<br /><br />'+
+								'</li>'
+							).appendTo('#items');
+							console.log(answer);
+						}
+					}
+				});
 		});
-	});
+
+
+
 
 	$('#csv').on('click', function(){
+		refreshAjax("#items")
 		$('<h2>').html('CSV starts here').appendTo('#items');
 		$.ajax({
 			url: 'data.csv',
@@ -313,6 +323,7 @@ var validate;
 	});
 
 	$('#xml').on('click', function(){
+		refreshAjax("#items")
 		$('<h2>').html('XML starts here').appendTo('#items');
 			$.ajax({
 			url: "data.xml",
