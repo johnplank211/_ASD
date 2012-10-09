@@ -74,22 +74,23 @@ var getData = function () {
 		$("#show").empty();
 		//refreshList();
 		for (var i = 0, len = localStorage.length; i < len; i++) {
-			 $("<li>").append(show);
+			 var li = $("<li>");
+			 li.appendTo(show);
 			 
 			 var key = localStorage.key(i);
 			 var value = localStorage.getItem(key);
 
 			 var obj = JSON.parse(value);
-			 console.log(key, value, obj);
+			 console.log(obj);
 			 
-			 for (var t in obj) {
-			 	$("<p>" + obj[t][0] + "</p>").append(show);
-			 	
+			 for (var t = 1; t < 19; t++) {
+			 	//$("<p>" + obj[t][0] + obj[t][1] + "</p>").appendTo(li);
+			 	console.log(t);
 			 }
 			
 		}
-		//$("#show").listview("refresh");
-		console.log(key, value, obj);
+		$("#show").listview("refresh");
+		//console.log(key, value, obj);
 		changePage("savedData");
 		refreshList();
 		console.log("bravo");	
@@ -203,10 +204,10 @@ var getCheckBoxValue = function () {
 	};
 
 
-var storeData = function(key){
+var storeData = function(data){
 	console.log("boom");
 		var id;
-	if(!key) {
+	if(!data.key) {
 			 id    		= Math.floor(Math.random()* 1000001);
 		} else {
 			 id = key;
@@ -214,6 +215,7 @@ var storeData = function(key){
 		getCheckBoxValue();
 		var apocalypseValue = getRadio();
 		var item 			= {};
+			item.key		= id;
 		    item.apocalypse = ["Apocalypse:", apocalypseValue];
 			item.fear       = ["Fear level:", $("#select").val()];
 			item.firearm	= ["Firearm:", firearmValue];
