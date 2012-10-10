@@ -76,20 +76,28 @@ var getData = function () {
 		for (var i = 0, len = localStorage.length; i < len; i++) {
 			 var li = $("<li>");
 			 li.appendTo(show);
-			 
+
+			 var checkboxes = [];
+				$(":checkbox:checked").each(function(x){
+					checkboxes[x]= $(this).val()
+					console.log(x, checkboxes);
+				})
 			 var key = localStorage.key(i);
 			 var value = localStorage.getItem(key);
 
 			 var obj = JSON.parse(value);
 			 console.log(obj);
 			 
-			 for (var t = 1; t < 19; t++) {
-			 	//$("<p>" + obj[t][0] + obj[t][1] + "</p>").appendTo(li);
-			 	console.log(t);
-			 }
-			
+			 $("<p>" + obj.apocalypse + "<p>").appendTo(li);
+			 $("<p>" + obj.readiness + "</p>").appendTo(li);
+			 $("<p>" + obj.date + "<p>").appendTo(li);
+			 $("<p>" + obj.email + "<p>").appendTo(li);
+			 $("<p>" + obj.comments + "<p>").appendTo(li);
+			 $("<p>" + obj.fear + "<p>").appendTo(li);
+			 $("<p>" + "Equipment List: " + checkboxes + "<p>").appendTo(li);
+
 		}
-		$("#show").listview("refresh");
+		//$("#show").listview("refresh");
 		//console.log(key, value, obj);
 		changePage("savedData");
 		refreshList();
