@@ -1,10 +1,10 @@
 {
   "env": {
     "local": {
-      "db": "http://127.0.0.1:5984/apocalypse"
+      "db": "http://127.0.0.1:5984/apocalypse_app"
     },
     "cloudant": {
-      "db": "https:totheefacceireeshaveries:XNm4XwhEgJEqQr4VauaDA0Sb@johnplank211.cloudant.com/apocalypse_app
+      "db": "https://yfaverompallenesedgivent:oldfn3oa5mqElXWMbI2l3ohe@johnplank211.cloudant.com/apocalypse_app"
     }
   }
 }

@@ -18,16 +18,16 @@ Apocalypse Checklist -->
 		
 		<title>John Plank: Apocalypse Checklist</title>
 		
-		<link href="css/style.css" rel="stylesheet"/> 
+		<link href="main.css" rel="stylesheet"/> 
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
 		
 		<link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" />
 		<link rel="stylesheet" type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.min.css" /> 
 
 
-		<link rel="stylesheet" href="css/style.css" />
-		
-		<script src="js/libs/modernizr.custom.min.js"></script>
+		<link rel="stylesheet" href="main.css" />
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="modernizr.custom.min.js"></script>
 	
 	
 	</head>
@@ -38,7 +38,7 @@ Apocalypse Checklist -->
 			
 			</div>
 
-			<div data-role="content" >
+			<div data-role="content" class="ui-body-b">
 			
 				<a href="#form" data-ajax="false" >
 				<img src="Header.png" >
@@ -48,11 +48,11 @@ Apocalypse Checklist -->
 	   			<ul data-role="listview"   >
 		            <!-- <li><h3>Your Apocalypose Checklists</h3> -->
 		            <h3><em>What are the diefferent types of apocalypses?</em></h3>
-		            <li><a href="#zombie"><img class="img-1" src="images/zombie.png" alt="Zombie" class="ui-li-icon">Zombie<span class="ui-li-count"></span></a></li>
-		            <li><a href="#natural"><img class="img-1" src="images/natural.png" alt="Natural" class="ui-li-icon">Natural <span class="ui-li-count"></span></a></li>
-		            <li><a href="#biblical"><img class="img-1" src="images/biblical.png" alt="biblical" class="ui-li-icon">Biblical <span class="ui-li-count"></span></a></li>
-		            <li><a href="#atomic"><img class="img-1" src="images/atomic.png" alt="atomic" class="ui-li-icon">Atomic <span class="ui-li-count"></span></a></li>
-		            <li><a href="#aliens"><img class="img-1" src="images/alien.png" alt="Aliens" class="ui-li-icon">Aliens <span class="ui-li-count"></span></a></li>
+		            <li><a href="#zombie"><img class="img-1" src="Zombie.png" alt="Zombie" class="ui-li-icon">Zombie<span class="ui-li-count"></span></a></li>
+		            <li><a href="#natural"><img class="img-1" src="Natural.png" alt="Natural" class="ui-li-icon">Natural <span class="ui-li-count"></span></a></li>
+		            <li><a href="#biblical"><img class="img-1" src="Biblical.png" alt="biblical" class="ui-li-icon">Biblical <span class="ui-li-count"></span></a></li>
+		            <li><a href="#atomic"><img class="img-1" src="Atomic.png" alt="atomic" class="ui-li-icon">Atomic <span class="ui-li-count"></span></a></li>
+		            <li><a href="#aliens"><img class="img-1" src="alien.png" alt="Aliens" class="ui-li-icon">Aliens <span class="ui-li-count"></span></a></li>
 		        </ul> 
 	   	 
 	   	
@@ -65,9 +65,9 @@ Apocalypse Checklist -->
 		
 				<div data-role="navbar" >
 					<ul>
-						<li><a href="#savedData" data-icon="star" >End News</a></li>
+						<li><a href="#news" data-icon="star" >End News</a></li>
 						<li><a href="http://johnplank211.github.com/mdv-projects/MiU/week-4/bronzeApp/index.html" data-icon="star">git</a></li>
-						<li><a href="#storage" data-icon="star" >Storage</a></li>
+						<li><a href="#savedData" data-icon="star" >Storage</a></li>
 						
 					</ul>
 				</div>
@@ -78,13 +78,13 @@ Apocalypse Checklist -->
 
 		<div data-role="page" id="zombie" data-add-back-btn="true" data-theme="a" >
 			<div data-role="header" data-role="fixed">
-				<img src="images/header2.png">
+				<img src="header2.png">
 				 
 			</div>
 			<div class="content">
 					<p>Don't panic under construction. If an Zombie apocalypse has happened please consult your Bible until this page is operational. Mahalo and be well!</p>
 				<div data-role="collapsible" data-collapsed="true" >
-			   		<img src="images/zombie.png">
+			   		<img src="zombie.png">
 			   		<h3>What are Zombies</h3>
 			   		<p>The living undead who crave human flesh</p>
 			   	</div>
@@ -108,14 +108,14 @@ Apocalypse Checklist -->
 	
 		<div data-role="page" id="natural" data-add-back-btn="true" data-theme="a" >
 			<div data-role="header" data-role="fixed">
-				<img src="images/header2.png" >
+				<img src="header2.png" >
 				 
 			</div>
 			<div data-role="content" class="content-primary">
 				<p>Don't panic under construction. If an Natural apocalypse has happened please consult your Bible until this page is operational. Mahalo and be well!</p>
 				<div data-role="collapsible" data-collapsed="true" >
-				   	<a>	<img src="images/natural.png">
-				  		<img src="images/header2.png" >
+				   	<a>	<img src="Natural.png">
+				  		<img src="header2.png" >
 					</a>
 				   	<p>Could be asteroids, earthquakes, or just all volcanoes erupting at once.</p>
 				</div>
@@ -138,13 +138,13 @@ Apocalypse Checklist -->
 
 		<div data-role="page" id="biblical" data-add-back-btn="true" data-theme="a" >
 			<div data-role="header" data-role="fixed">
-				<img src="images/header2.png" >
+				<img src="header2.png" >
 				 
 			</div>
 			<div class="content">
 				<p>Don't panic under construction. If an Biblical apocalypse has happened please consult your Bible until this page is operational. Mahalo and be well!</p>
 				<div data-role="collapsible" data-collapsed="true" >
-			   		<img src="images/biblical.png">
+			   		<img src="Biblical.png">
 			   		<h3>Biblical</h3>
 		   		<p>Basically all the worst parts of the bible</p>
 		   		</div>
@@ -166,13 +166,13 @@ Apocalypse Checklist -->
 
 		<div data-role="page" id="atomic" data-add-back-btn="true" data-theme="a" >
 			<div data-role="header" data-role="fixed">
-				<img src="images/header2.png" >
+				<img src="header2.png" >
 				
 			</div>
 			<div class="content-primary">
 				<p>Don't panic under construction. If an Atomic apocalypse has happened please consult your Bible until this page is operational. Mahalo and be well!</p>
 				<div data-role="collapsible" data-collapsed="true" >
-			   		<img src="images/atomic.png">
+			   		<img src="Atomic.png">
 			   		<h3>Atomic</h3>
 			   		<p>Nuclear war will bring bad radiation and a nuclear winter.</p>
 			   		<a href="http://johnplank211.github.com/mdv-projects/MUI/bronze-app/index.html" >stuff</a>
@@ -196,30 +196,30 @@ Apocalypse Checklist -->
 
 		<div data-role="page" id="aliens" data-add-back-btn="true" data-theme="a" >
 			<div data-role="header" data-role="fixed">
-				<img src="images/header2.png" >
+				<img src="header2.png" >
 				 
 			</div>
 			<div class="content-primary">
 				<p>Don't panic under construction. If an Alien apocalypse has happened please consult your Bible until this page is operational. Mahalo and be well!</p>
 				<div data-role="collapsible" data-collapsed="true" >
-			   		<img src="images/alien.png">
+			   		<img src="alien.png">
 			   		<h3>Aliens</h3>
 			   		<p>Will take our planets resources and enslave us, or impregnate us with their spore either way it doesn't look good.</p>
 			   	</div>
 			   	<div data-role="collapsible" data-collapsed="true" >
 			   		<h3>Alien movies to prepare you</h3>
 			   		<div class="ui-grid-b" >
-			   			<div class="ui-block-a"><img src="images/movie.png"><br>
+			   			<div class="ui-block-a"><img src="movie.png"><br>
 			   			Aliens</div>
-			   			<div class="ui-block-b"><img src="images/signs.png"><br>
+			   			<div class="ui-block-b"><img src="signs.png"><br>
 			   			Signs</div>
-			   			<div class="ui-block-c"><img src="images/predator.png"><br>
+			   			<div class="ui-block-c"><img src="predator.png"><br>
 			   			Predator</div>
-			   			<div class="ui-block-a"><img src="images/idependence.png"><br>
+			   			<div class="ui-block-a"><img src="idependence.png"><br>
 			   			Independence<br>Day </div>
-			   			<div class="ui-block-b"><img src="images/mars.png"><br>
+			   			<div class="ui-block-b"><img src="mars.png"><br>
 			   			Mars Attacks</div>
-			   			<div class="ui-block-c"><img src="images/earth.png"><br>
+			   			<div class="ui-block-c"><img src="earth.png"><br>
 			   			The Day the Earth Stood Still</div>
 			   		</div>
 			   	</div>
@@ -238,7 +238,7 @@ Apocalypse Checklist -->
 
 		<div data-role="page" id="news" data-add-back-btn="true" data-theme="a" >
 			<div data-role="header" data-role="fixed">
-				<img src="images/header2.png" >
+				<img src="header2.png" >
 				
 			</div>
 			<div class="content-primary">
@@ -420,7 +420,7 @@ Apocalypse Checklist -->
 		<div data-role="page" id="form" data-theme="a" >
 			<div data-role="header" data-role="fixed">
 				<a href="#home">
-					<img src="images/header2.png" >
+					<img src="header2.png" >
 				</a><br><br>
 			</div>
 			<div class="content-primary">
@@ -572,10 +572,13 @@ Apocalypse Checklist -->
 		<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.core.min.js"></script>
 		<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.calbox.min.js"></script>
 		<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/i18n/jquery.mobile.datebox.i18n.en_US.utf8.js"></script>
-		<script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
 		
-		<script type="text/javascript" src="js/json.js"></script>
-		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="jquery.validate.min.js"></script>
+		
+		<script type="text/javascript" src="views/person/map.js"></script>
+		
+		<script type="text/javascript" src="json.js"></script>
+		<script type="text/javascript" src="main.js"></script>
 
 
 	</body>
