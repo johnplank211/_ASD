@@ -1,3 +1,102 @@
+/*$.couch.db("mydb").create({
+	success: function(data) {
+		console.log(data);
+	},
+	error: function(status) {
+		console.log(status);
+	}
+});*/
+
+
+/*$("#custom").on("pageinit", function() {
+	$.couch.db("apocalypse_app").view("apocalypse/person", {
+		success: function(data) {
+			console.log(data);
+		}
+	})
+})*/
+
+
+
+
+/*$("#custom").on("pageinit", function() {
+	$.couch.db("apocalypse_app").view("design/apocalypse", {
+		"success": function(data){
+		console.log("better");
+			$.each(data.rows, function(index, person){
+				var fear = person.value.fear;
+				var apocalypse = person.value.apocalypse;
+				var firearm = person.value.firearm;
+				var ammo = person.value.firearm;
+				$("#person").append(
+					$("<li>").append(
+						("<a>").attr("href", "#")
+							.text(title)
+					)
+				);					
+			
+		});
+		$("#person").listview("refresh");
+	}
+	});
+});*/
+
+/*var urlVars = function(urlData) {
+	var urlData = $($.mobile.activePage).data("url");
+	var urlParts = urlData.split("?");
+	var urlPairs = urlParts[1].split("&");
+	var urlValues = {};
+	for (var pair in urlPairs) {
+		var keyValue = urlPairs[pair].split("=");
+		var key = decodeURIComponent(keyValue[0]);
+		var key = decodeURIComponent(keyValue[1]);
+		urlValues[key] = value;
+	}
+	return urlValues;
+};
+
+$("#home").on("pageinit", function() {
+	var person = urlVars()["person"]
+	console.log(person);*/
+	/*var urlParts = urlData.split("?");
+	var urlPairs = urlParts[1].split("&");
+	var urlValues = {};
+	for (var pair in urlPairs) {
+		var keyValue = urlPairs[pair].split("=");
+		var key = decodeURIComponent(keyValue[0]);
+		var key = decodeURIComponent(keyValue[1]);
+		urlValues[key] = value;
+	}
+	console.log(urlValues);*/
+//});
+
+
+/*$(document).ready(function() {
+	console.log("word");
+	$.ajax({
+		"url": "_view/person",
+		"dataType": "json",
+		"success": function(data){
+		console.log("better");
+			$.each(data.rows, function(index, person){
+				var fear = person.value.fear;
+				var apocalypse = person.value.apocalypse;
+				var firearm = person.value.firearm;
+				var ammo = person.value.firearm;
+				$("#dummy").append(
+					$("<li>").append(
+						("<a>").attr("href", "#")
+							.text(title)
+					)
+				);					
+			
+		});
+		$("#dummy").listview("refresh");
+	}
+});
+});*/
+
+
 /*$(function(){
 
 	$("#checklistForm h5").fadeOut().
@@ -14,6 +113,8 @@
 	;
 
 });*/
+
+
 
 
 
@@ -65,10 +166,10 @@ var getData = function () {
 		console.log("here here")
 		//changePage("savedData");
 		
-		if (localStorage.length === 0) {
+		/*if (localStorage.length === 0) {
 			alert("There is no data in Local Storage so data was added. ");
 			autoFillData();
-		}
+		}*/
 
 		var show = $("#show");
 		$("#show").empty();
@@ -214,16 +315,16 @@ var getCheckBoxValue = function () {
 
 var storeData = function(data){
 	console.log("boom");
-		var id;
+		/*var id;
 	if(!data.key) {
 			 id    		= Math.floor(Math.random()* 1000001);
 		} else {
 			 id = key;
-		}
+		}*/
 		getCheckBoxValue();
 		var apocalypseValue = getRadio();
 		var item 			= {};
-			item.key		= id;
+			//item.key		= id;
 		    item.apocalypse = ["Apocalypse:", apocalypseValue];
 			item.fear       = ["Fear level:", $("#select").val()];
 			item.firearm	= ["Firearm:", firearmValue];
@@ -244,11 +345,23 @@ var storeData = function(data){
 			item.comments	= ["Comments:", $("#comments").val()];
 			item.readiness  = ["Readiness:", $("#readiness").val()];
 
-		localStorage.setItem(id, JSON.stringify(item));
+		//localStorage.setItem(id, JSON.stringify(item));
+		
+			var doc = {"_id": "item"};
+			$.couch.db("apocalypse_app").saveDoc(doc, {
+			    success: function(data) {
+			        console.log(data);
+			    },
+			    error: function(status) {
+			        console.log(status);
+			    }
+			});
+
+
 		alert("Checklist Saved!");
 	console.log(item);
 	changePage("savedData");
-	getData();
+	//getData();
 }; 
 
 var	deleteItem = function (){
@@ -267,7 +380,7 @@ var clearLocal = function(){
 
 var validate;
 
-function refreshAjax(){
+/*function refreshAjax(){
 	console.log('refreshed');
 	$("#items").listview('refresh');
 };
@@ -352,9 +465,9 @@ function refreshAjax(){
 				});
 			}
 		});
-	});
+	});*/
 
-$(document).ready(function() {
+/*$(document).ready(function() {
 	console.log("word");
 	$.ajax({
 		"url": "_view/person",
@@ -364,8 +477,8 @@ $(document).ready(function() {
 			$.each(data.rows, function(index, person){
 				var fear = person.value.fear;
 				var apocalypse = person.value.apocalypse;
-				var firearm = firearm.value.firearm;
-				var ammo = ammo.value.firearm;
+				var firearm = person.value.firearm;
+				var ammo = person.value.firearm;
 				$("#dummy").append(
 					$("<li>").append(
 						("<a>").attr("href", "#")
@@ -377,6 +490,43 @@ $(document).ready(function() {
 		$("#dummy").listview("refresh");
 	}
 });
+});*/
+var doc = {"_id": "person:name:bill"};
+$.couch.db("apocalypse_app").saveDoc(doc, {
+    success: function(data) {
+        console.log(data);
+    },
+    error: function(status) {
+        console.log(status);
+    }
 });
+
+var doc = {"_id": "person:name:steve"};
+$.couch.db("apocalypse_app").saveDoc(doc, {
+    success: function(data) {
+        console.log(data);
+    },
+    error: function(status) {
+        console.log(status);
+    }
+});
+
+var doc = {"_id": "person:name:turd furgerson","firearm": "Firearm: Yes",
+   "ammo": "Ammo: Yes",
+   "apocalypse": "Apocalypse: Nuclear"};
+$.couch.db("apocalypse_app").saveDoc(doc, {
+    success: function(data) {
+        console.log(data);
+    },
+    error: function(status) {
+        console.log(status);
+    }
+});
+
+
+
+
+
+
 
 

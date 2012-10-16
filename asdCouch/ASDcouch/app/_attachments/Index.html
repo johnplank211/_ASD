@@ -17,7 +17,7 @@ Apocalypse Checklist -->
 		<meta http-equiv="cleartype" content="on">
 		
 		<title>John Plank: Apocalypse Checklist</title>
-		
+		<script src="jquery.couch.js"></script>
 		<link href="main.css" rel="stylesheet"/> 
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
 		
@@ -28,7 +28,7 @@ Apocalypse Checklist -->
 		<link rel="stylesheet" href="main.css" />
 		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 		<script src="modernizr.custom.min.js"></script>
-	
+		<script src="jquery.couch.js"></script>
 	
 	</head>
 
@@ -65,7 +65,7 @@ Apocalypse Checklist -->
 		
 				<div data-role="navbar" >
 					<ul>
-						<li><a href="#news" data-icon="star" >End News</a></li>
+						<li><a href="#custom" data-icon="star" >Custom</a></li>
 						<li><a href="http://johnplank211.github.com/mdv-projects/MiU/week-4/bronzeApp/index.html" data-icon="star">git</a></li>
 						<li><a href="#savedData" data-icon="star" >Storage</a></li>
 						
@@ -74,6 +74,29 @@ Apocalypse Checklist -->
 			    
 			</div>
 	
+		</div>
+
+		<div data-role="page" id="custom" data-add-back-btn="true" data-theme="a" >
+			<div data-role="header" data-role="fixed">
+				<img src="header2.png">
+				 
+			</div>
+				<div class="content" class="ui-body-a">
+									   		
+				   		<ul id="person" data-role="listview">
+				   		
+				   		</ul>
+				</div>			
+
+			<div data-role="footer" data-position="fixed" data-id="x" >
+				<div data-role="navbar" >
+					<ul>
+						<li><a href="#home" data-icon="star" >Home</a></li>
+						<li><a href="#news" data-icon="star">End News</a></li>
+						<li><a href="http://johnplank211.github.com/mdv-projects/MiU/week-4/bronzeApp/index.html" data-icon="star">git</a></li>
+					</ul>
+				</div>
+			</div>
 		</div>
 
 		<div data-role="page" id="zombie" data-add-back-btn="true" data-theme="a" >
@@ -576,7 +599,7 @@ Apocalypse Checklist -->
 		<script type="text/javascript" src="jquery.validate.min.js"></script>
 		
 		<script type="text/javascript" src="views/person/map.js"></script>
-		
+		<script src="jquery.couch.js"></script>
 		<script type="text/javascript" src="json.js"></script>
 		<script type="text/javascript" src="main.js"></script>
 
