@@ -17,7 +17,7 @@ Apocalypse Checklist -->
 		<meta http-equiv="cleartype" content="on">
 		
 		<title>John Plank: Apocalypse Checklist</title>
-		<script src="jquery.couch.js"></script>
+		
 		<link href="main.css" rel="stylesheet"/> 
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
 		
@@ -26,9 +26,8 @@ Apocalypse Checklist -->
 
 
 		<link rel="stylesheet" href="main.css" />
-		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 		<script src="modernizr.custom.min.js"></script>
-		<script src="jquery.couch.js"></script>
+		
 	
 	</head>
 
@@ -107,7 +106,7 @@ Apocalypse Checklist -->
 			<div class="content">
 					<p>Don't panic under construction. If an Zombie apocalypse has happened please consult your Bible until this page is operational. Mahalo and be well!</p>
 				<div data-role="collapsible" data-collapsed="true" >
-			   		<img src="zombie.png">
+			   		<img src="Zombie.png">
 			   		<h3>What are Zombies</h3>
 			   		<p>The living undead who crave human flesh</p>
 			   	</div>
@@ -455,7 +454,7 @@ Apocalypse Checklist -->
 						<fieldset data-role="controlgroup" data-mini="true">
 							<h5>*Must be filled out</h5>
 								<br><h3>* Apocalypse</h3>
-							<input type="radio" value="Zombie" checked="Yes" name="apocalypse" id="apocalypse-1" data-theme="a" class="required"/>
+							<input type="radio" value="Zombie"  name="apocalypse" id="apocalypse-1" data-theme="a" class="required"/>
 							<label for="apocalypse-1" >Zombie</label>
 
 							<input type="radio" value="Natural" name="apocalypse" id="apocalypse-2" data-theme="a" />
@@ -477,10 +476,10 @@ Apocalypse Checklist -->
 					<div data-role="fieldcontain"  >
 						<fieldset data-role="controlgroup" data-mini="true"  >
 							<h3>Checklist Items</h3>
-							<input type="checkbox" value="Firearm" checked="Yes" name="firearm" id="firearm" data-theme="a"/>
+							<input type="checkbox" value="Firearm"  name="firearm" id="firearm" data-theme="a"/>
 							<label for="firearm" >Firearm</label>
 
-							<input type="checkbox" value="Ammo" checked="Yes" name="items" id="ammo" data-theme="a"/>
+							<input type="checkbox" value="Ammo"  name="items" id="ammo" data-theme="a"/>
 							<label for="ammo" >Ammo</label>
 
 							<input type="checkbox" value="Melee Weapon" name="item" id="meleeWeapon" data-theme="a"/>
@@ -489,7 +488,7 @@ Apocalypse Checklist -->
 							<input type="checkbox" value="P38" name="items" id="p38" data-theme="a"/>
 							<label for="p38" data-theme="a">P38</label>
 
-							<input type="checkbox" value="Intestinal Fortitude" checked="Yes" name="item" id="intestinalFortitude" data-theme="a"/>
+							<input type="checkbox" value="Intestinal Fortitude"  name="item" id="intestinalFortitude" data-theme="a"/>
 							<label for="intestinalFortitude" >Intestinal Fortitude</label>
 
 							<input type="checkbox" value="CannedFood" name="items" id="cannedFood" data-theme="a"/>
@@ -524,30 +523,30 @@ Apocalypse Checklist -->
 						<label for="mydate">*Date The World Ended</label>
 
 						<input name="mydate" id="mydate" type="date" data-role="datebox"
-						   data-options='{"mode": "calbox"}' placeholder="12/21/2012" data-theme="a" >
-					</div>
+						   data-options='{"mode": "calbox"}'  data-theme="a" >
+					</div>    <!-- placeholder="12/21/2012" -->
 			
 
 					<div data-role="fieldcontain">
 						<label for="readiness">Readiness:</label>
-						<input type="range" name="readiness" id="readiness" value="3" min="0" max="11" data-theme="a"/>
-					</div>
+						<input type="range" name="readiness" id="readiness"  min="0" max="11" data-theme="a"/>
+					</div> 		<!-- value="3" -->
 
 					
 					<div data-role="fieldcontain">
 						<label for="email">*Email Address:</label>
-						<input type="text" name="email" id="email" placeholder="notGonnamake@dead.com" class="required email" data-theme="a"/>
-					</div>
+						<input type="text" name="email" id="email" class="required email" data-theme="a"/>
+					</div>				<!-- placeholder="notGonnamake@dead.com" --> 
 
 					<div data-role="fieldcontain" >
 						<label for="comments">*Death Letter:</label>
-						<textarea placeholder="I tried my best but my best sucked!" data-theme="a" class="required" id="comments"></textarea>
-					</div>
+						<textarea  data-theme="a" class="required" id="comments"></textarea>
+					</div>			<!-- placeholder="I tried my best but my best sucked!" -->
 
 					<div data-role="fieldcontain" >
 						<label for="fearGroups">Fear Level</label>
 						<select name="fearGroups" id="select" data-native-menu="false" data-theme="a" >
-							<option data-placeholder=" true" >Please Choose Your Fear Level</option>
+							<!-- <option data-placeholder=" true" >Please Choose Your Fear Level</option> -->
 							<option value="denial" >This can't be happening</option>
 							<option value="scared" >Oops I crapped my pants</option>
 							<option value="courage" >Psalms 144:1</option>
@@ -558,7 +557,7 @@ Apocalypse Checklist -->
 
 					<div data-role="fieldcontain">
 				    	<ul id="nav">
-					    	<li><a href="#" id="clear">Clear Stored Data</a></li>
+					    	<!-- <li><a href="#" id="clear">Clear Stored Data</a></li> -->
 					    	<li><a href="#" id="displayLink">Display data</a></li>
 				   		</ul>
 				   </div> 
@@ -598,9 +597,9 @@ Apocalypse Checklist -->
 		
 		<script type="text/javascript" src="jquery.validate.min.js"></script>
 		
-		<script type="text/javascript" src="views/person/map.js"></script>
+		
 		<script src="jquery.couch.js"></script>
-		<script type="text/javascript" src="json.js"></script>
+		
 		<script type="text/javascript" src="main.js"></script>
 
 
